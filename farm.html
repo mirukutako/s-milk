@@ -845,11 +845,11 @@
               <div class="form-block">
                 <div class="input-item w100">
                   <div class="input-item-title caption-up">Как вас зовут*</div>
-                  <input class="input-main" type="text" placeholder="Калинин Иван Васильевич" data-validation="required" data-validation-error-msg="Поле обязательно для заполнения!">
+                  <input class="input-main" type="text" placeholder="Калинин Иван Васильевич" data-validation="required" data-validation-error-msg-required="Поле обязательно для заполнения!">
                 </div>
                 <div class="input-item w100">
                   <div class="input-item-title caption-up">E-mail*</div>
-                  <input class="input-main" type="email" placeholder="user@gmail.com" data-validation="email" data-validation-error-msg="Поле обязательно для заполнения!">
+                  <input class="input-main" type="email" placeholder="user@gmail.com" data-validation="required email" data-validation-error-msg-required="Поле обязательно для заполнения!" data-validation-error-msg-email="Введите корректный адрес!">
                 </div>
                 <div class="input-item w50">
                   <div class="input-item-title caption-up">Телефон</div>
@@ -873,12 +873,13 @@
                 </div>
                 <div class="input-item w100">
                   <div class="input-item-title caption-up">Ваш вопрос*</div>
-                  <textarea class="input-main" rows="4" placeholder="Какие условия сотрудничества HoReca?" data-validation="required" data-validation-error-msg="Поле обязательно для заполнения!"></textarea>
+                  <textarea class="input-main" rows="4" placeholder="Какие условия сотрудничества HoReca?" data-validation="required" data-validation-error-msg-required="Поле обязательно для заполнения!"></textarea>
                 </div>
                 <div class="input-item w100">
                   <label class="input-file">
                     <div class="input-file-title caption-up">Прикрепить файл</div>
-                    <input type="file" data-validation="size" data-validation-max-size="1M" data-validation-error-msg="Вы превысили максимально допустимый лимит в 50МБ">
+                    <input type="file" data-validation="size mime" data-validation-allowing="jpg, png, pdf, doc, docx, txt" data-validation-max-size="1M" data-validation-error-msg="Вы превысили максимально допустимый лимит в 50МБ"
+                      data-validation-error-msg-mime="Данный тип файла не поддерживается">
                   </label>
                   <div class="file-name-wrap">
                     <div class="file-name"></div>
@@ -895,6 +896,17 @@
                 <button class="bttn bttn--border" type="submit">Отправить</button>
               </div>
             </form>
+          </div>
+        </div>
+        <div class="modal-container modal-feedback-success">
+          <div class="modal-close closePopup">
+            <svg class="close">
+              <use xlink:href="#close"></use>
+            </svg>
+          </div>
+          <div class="modal-container-inner modal-feedback-inner">
+            <div class="modal-feedback-title">Спасибо</div>
+            <p class="text">Ваш вопрос принят в обработку, в ближайшее время наш менеджер свяжется с вами. Очень рады, что вы связались с нами. Хорошего вам дня.</p>
           </div>
         </div>
       </div>
