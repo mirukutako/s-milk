@@ -541,36 +541,42 @@
         <div class="box">
           <div class="inners-greed">
             <div class="news-nav">
-              <ul class="list-bttn news-filter">
+              <!-- элемент .list-bttn__link спокойно можно менять со span на любой нужный (ссылка, див и тд)-->
+              <ul class="list-bttn">
                 <li class="list-bttn__item active">
-                  <span class="list-bttn__link" data-filter="*">Все</span>
+                  <span class="list-bttn__link">Все</span>
                 </li>
                 <li class="list-bttn__item">
-                  <span class="list-bttn__link" data-filter=".news">Новости</span>
+                  <span class="list-bttn__link">Новости</span>
                 </li>
                 <li class="list-bttn__item">
-                  <span class="list-bttn__link" data-filter=".events">События</span>
+                  <span class="list-bttn__link">События</span>
                 </li>
                 <li class="list-bttn__item">
-                  <span class="list-bttn__link" data-filter=".novelty">Новинки</span>
+                  <span class="list-bttn__link">Новинки</span>
                 </li>
                 <li class="list-bttn__item">
-                  <span class="list-bttn__link" data-filter=".video">Видео</span>
+                  <span class="list-bttn__link">Видео</span>
                 </li>
               </ul>
-              <!-- .filter-select.news-sorting-->
-              <!-- 	span.filter-select__item Сначала новые-->
-              <!-- 	span.filter-select__carret-->
-              <!-- 		+icon('carret')-->
-              <!-- 	ul.filter-select__list-->
-              <!-- 		li.filter-select__bttn.active(data-sort-by="fresh") Сначала новые-->
-              <!-- 		li.filter-select__bttn(data-sort-by="popular") Популярные-->
-              <!-- 		li.filter-select__bttn.asc(data-sort-by="name") От А до Я-->
-              <!-- 		li.filter-select__bttn.desc(data-sort-by="name") От Я до А-->
+              <!-- временно закомменчено. вроде убираем это насовсем
+.filter-select.news-sorting
+ 	span.filter-select__item Сначала новые
+ 	span.filter-select__carret
+ 		+icon('carret')
+ 	ul.filter-select__list
+ 		li.filter-select__bttn.active(data-sort-by="fresh") Сначала новые
+ 		li.filter-select__bttn(data-sort-by="popular") Популярные
+ 		li.filter-select__bttn.asc(data-sort-by="name") От А до Я
+ 		li.filter-select__bttn.desc(data-sort-by="name") От Я до А-->
             </div>
-            <div class="news-tile scroll-anime">
-              <div class="news-tile-wrap ajax-list">
-                <a class="events-card novelty" href="#" data-popular="1">
+            <!--при загрузке новых новостей бомбить их в .news-tile-wrap (точнее в .ajax-list) и при этом
+вешать/убирать класс .loading с родителя .news-tile (анимация все дела).
+так же вешать/убирать класс .loading на .ajax-pager-link да бы избежать кучи
+кликов во время загрузки новостей и пофиксить hover-состояние-->
+            <div class="news-tile">
+              <div class="news-tile-wrap scroll-anime ajax-list">
+                <a class="events-card novelty" href="#">
                   <div class="events-card-head">
                     <div class="events-card-head__out">
                       <div class="events-card-head__img load-parent">
@@ -586,7 +592,7 @@
                     <p class="note events-card__title">Мы запустили производство творожного мусса</p>
                   </div>
                 </a>
-                <a class="events-card events" href="#" data-popular="5">
+                <a class="events-card events" href="#">
                   <div class="events-card-head">
                     <div class="events-card-head__out">
                       <div class="events-card-head__img load-parent">
@@ -602,7 +608,7 @@
                     <p class="note events-card__title">Выставка «Продэкспо-2017»</p>
                   </div>
                 </a>
-                <a class="events-card novelty" href="#" data-popular="10">
+                <a class="events-card novelty" href="#">
                   <div class="events-card-head">
                     <div class="events-card-head__out">
                       <div class="events-card-head__img load-parent">
@@ -618,7 +624,7 @@
                     <p class="note events-card__title">Группа компаний Серволюкс продолжает наращивать экспорт молочной продукции в Китай</p>
                   </div>
                 </a>
-                <a class="events-card events" href="#" data-popular="2">
+                <a class="events-card events" href="#">
                   <div class="events-card-head">
                     <div class="events-card-head__out">
                       <div class="events-card-head__img load-parent">
@@ -634,7 +640,7 @@
                     <p class="note events-card__title">За последние три года объём реализации продукции вырос более чем в 3,5 раза</p>
                   </div>
                 </a>
-                <a class="events-card news" href="#" data-popular="11">
+                <a class="events-card news" href="#">
                   <div class="events-card-head">
                     <div class="events-card-head__out">
                       <div class="events-card-head__img load-parent">
@@ -650,7 +656,7 @@
                     <p class="note events-card__title">Я запустил производство творожного мусса</p>
                   </div>
                 </a>
-                <a class="events-card video" href="#" data-popular="1">
+                <a class="events-card video" href="#">
                   <div class="events-card-head">
                     <div class="events-card-head__out">
                       <div class="events-card-head__img load-parent">
